@@ -1,0 +1,38 @@
+#Naomi Glanton
+#12/10
+#making a program that prompts users to input random words to generate a goofy (but very PG) story
+
+#init
+
+#func
+
+#main
+print("It's MadLibs time!")
+print("Complete the following to get a silly story!")
+print("""There's a lot of questions... but it WILL be worth it ;)
+-------------------------------------------------------------""")
+royal_character = input("Royal title: ")
+house = input("Type of house: ")
+animal_adj = input("Adjective: ")
+animal = input("Animal: ")
+body_part = input("Body part: ")
+time_of_day = input("Time of day: ")
+animal_carriage = input("Another animal: ")
+code_amount = input("Number >1: ")
+another_time = input("Another time of day: ")
+many_scientists = input("Number >100: ")
+kingdom_title = input("Kingdom title: ")
+profession = input("Profession: ")
+castle_adj = input("Another adjective: ")
+adverb = input("Adverb: ")
+print("""-------------------------------------------------------------
+""")
+
+#main
+#print('\033[1m' + house + '\033[0m' + 
+print("\033[1m" + ("Day in the Life of a " + royal_character.capitalize().upper() + "/Computer Scientist!") + "\033[0m")
+print("I woke up in my " + '\033[1m' + house.upper() + '\033[0m' + " to the sound of a " + '\033[1m' + (animal_adj.upper() + " " + animal.upper()) + '\033[0m' + " tapping on my " + '\033[1m' + body_part.upper() + '\033[0m' + ". It was " + '\033[1m' + str(time_of_day) + '\033[0m' + ", and I had to rush to my job as a " + '\033[1m' + (royal_character.capitalize().upper()) + '\033[0m' + "/Computer Scientist!" )
+print("But when I got there (on my " + '\033[1m' + animal_carriage.upper() + '\033[0m' + "-drawn carriage), I already was FIRED!")
+print("Turns out, I forgot to code " + '\033[1m' + str(code_amount) + '\033[0m' + " programs before " + '\033[1m' + str(another_time) + '\033[0m' + ". SMH")
+print("(It doesn't help that there are " + '\033[1m' + many_scientists + '\033[0m' + " other computer scientists in the Kingdom of " + '\033[1m' + kingdom_title.capitalize().upper() + '\033[0m' + " to do my job.)")
+print("So I left to make a living as a " + '\033[1m' + profession.upper()+ '\033[0m' + " and moved into a " + '\033[1m' + castle_adj.upper() + '\033[0m' + " castle, living " + '\033[1m' + adverb.upper() + '\033[0m' + " ever after!")
