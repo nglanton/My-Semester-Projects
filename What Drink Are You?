@@ -1,0 +1,74 @@
+#naomi glanton  10/15/24 
+#nested if project = generating what drink someone is based on their answers to three questions.
+#if a user enters the wrong input, the question is asked again. if a user wants to end/continue the program at the end, they can do so.
+def drinkOrder():
+    print("Welcome to Your Drink Order 9999")
+    print("Answer the questions to find out what your drink order is!")
+    ans = input("morning or night? ")#asking for user input
+    while not(ans == "morning" or ans == "night"):#if they do not put in morning or night exactly how i wrote it 
+        print("You entered '" + ans +"'")#then they are prompted to write it in a different way.
+        print("That is invalid. Please print your answer how it is written in the question.")
+        ans = input("morning or night? ")#i ask the question again, and the loop repeats until they write it correct
+    #for every question, i repeat this same format of asking a question, then doing the "while" loop, then asking the other following questions. 
+    if ans == "morning":
+        ans = input("apple or blueberry? ")
+        while not(ans == "apple" or ans == "blueberry"):
+            print("You entered '" + ans +"'")
+            print("That is invalid. Please print your answer how it is written in the question.")
+            ans = input("apple or blueberry? ")
+        if ans == "apple":
+            ans = input("summer or autumn? ")
+            while not(ans == "summer" or ans == "autumn"):
+                print("You entered '" + ans +"'")
+                print("That is invalid. Please print your answer how it is written in the question.")
+                ans = input("summer or autumn? ")
+            if ans == "summer":
+                print("You are an Iced Matcha w/ Oat Milk")
+            else:#also, even though this is an "else" and anything other than summer leads to this, they have to still specifically write "autumn" in order to prompt this part. 
+                print("You are an Iced Chai w/ Oat Milk")
+        else:
+            ans = input("smoothie or salad? ")
+            while not(ans == "smoothie" or ans == "salad"):
+                print("You entered '" + ans +"'")
+                print("That is invalid. Please print your answer how it is written in the question.")
+                ans = input("smoothie or salad? ")
+            if ans == "smoothie":
+                print("Strawberry Acai Refresher w/ Lemonade")
+            else:
+                print("Crispy Water")
+    else:
+        ans = input("sweet or savory? ")
+        while not(ans == "sweet" or ans == "savory"):
+            print("You entered '" + ans +"'")
+            print("That is invalid. Please print your answer how it is written in the question.")
+            ans = input("sweet or savory? ")
+        if ans == "sweet":
+            ans = input("TikTok or Pinterest? ")
+            while not(ans == "TikTok" or ans == "Pinterest"):
+                print("You entered '" + ans +"'")
+                print("That is invalid. Please print your answer how it is written in the question.")
+                ans = input("TikTok or Pinterest? ")
+            if ans == "TikTok":
+                print("You are a 20 Liquid Cane Sugar + 20 Caramel Iced Coffee from Dunkin")
+            else:
+                print("You are a Spiced Pumpkin Pie Latte w/ Low Fat Milk")
+        else:
+            ans = input("Chicago or New York? ")
+            while not(ans == "Chicago" or ans == "New York"):
+                print("You entered '" + ans +"'")
+                print("That is invalid. Please print your answer how it is written in the question.")
+                ans = input("Chicago or New York? ")
+            if ans == "Chicago":
+                print("You are a Shaken Brown Sugar Oat Milk Espresso!")
+            else:
+                print("You are a Coffee. Black.")
+
+while True:#program is continued unless the user writes "n". if they write that, then the program stops running. 
+    drinkOrder()
+    again = input("Continue? (y/n) ")
+    while not(again == "y" or again == "n"):#also need a while loop here so that they do not accidentally start again
+        print("You entered '" + again + "'")
+        print("That is invalid. Please print your answer how it is written in the question.")
+        again = input("Continue? (y/n) ")
+    if again == 'n':
+        break
