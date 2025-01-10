@@ -1,0 +1,66 @@
+#Naomi Glanton
+#Jan 8 2025
+#Multiplication Quiz
+
+#Init
+import random
+import time
+score = 0 
+question = 0
+
+#Func
+def mult_quiz():
+    global score
+    global question# i dont actually think this is necessary if i have quesiton and score defined below, but wtv.
+    print("Welcome to the Multiplication Quiz!")
+    while True:#allows for endless playing
+        print("""Let's see how fast you can correctly answer each question.
+Ready, set...""")
+        time.sleep(5)
+        #otherwise the reader wouldnt have enough time to read the whole intsructions first
+        start_time = time.time()
+        print("GO!")
+        question = 0
+        score = 0
+        #reseting the score so that it wont be question 8/5, score 100, etc.
+        for i in range(5):
+            question = question + 1
+            print("Question " + str(question) + " of 5:")
+            num1 = random.randint(1,10)
+            num2 = random.randint(1,10)
+            print("What is " + str(num1) + " x " + str(num2) + "?")
+            while True:
+                #loop continues if they continue to get it wrong
+                user_ans = int(input("Your answer: "))
+                if user_ans == (num1 *num2):
+                    print("Correct!")
+                    score = score + 1
+                    break
+                else: 
+                    print("Incorrect.")
+                    again = input("Skip? (y/n) ")
+                    if again == "y":
+                        break
+                    #no score penalty but they just don't get points 
+        end_time = time.time()
+        elapsed_time = round((end_time - start_time), 3)
+        
+        print("You got " + str(score) + " of 5 questions correct!")
+        print("You completed the quiz in " + str(elapsed_time) + " seconds.")
+        if score >4 and elapsed_time <7:
+            print("is u magic???")
+            #reserved for only the best of the best scores! 
+        elif score >= 4 and elapsed_time <12:
+            print("Good job!")
+        elif score >= 4 and elapsed_time>12:
+            print("A little slow, but slow and steady wins the race!")
+        elif score <4 and elapsed_time>12:
+            print("Oh boy, let's do that again.")
+        else:
+            print("Better luck next time!")
+        new_round = input("Play again? (y/n): ")
+        if new_round == "n":
+            break
+
+#Main
+mult_quiz()
