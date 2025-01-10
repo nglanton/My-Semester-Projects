@@ -29,9 +29,9 @@ Currently updated w/ projects from Aug 2024- Jan 2025.
 - User-friendly instructions
 - Inputs including numbers become strings to ensure smooth running.
 
-  ### Project 5: Digital Scene (9/30/2024)
-**Summary**: Collaboration w/ Judah Franklin & Eva Deng to create a scene of a forest during sunset on IDLE. 
+  ### Project 5: Multiplication Quiz
+**Summary**: Users answer 5 multiplication questions to see 1) how many they can get correct and 2) how fast they can do it.
 **Key Features**: 
-- Created original trees and birds on IDLE utilizing parameters and loops. 
-- Code was created individually, and we adjusted when putting it all together to ensure a cohesive picture.
-- Included foreground, background, and sky elements. 
+- While loops are implemented to handle incorrect questions/ ability to replay the game.  
+- At the end of the game, output is determined by their score/ time (ie, what type of "congratulations" the user gets)
+- Multiplication questions are randomized.
