@@ -1,0 +1,233 @@
+#Naomi Glanton
+#12/12/2024
+
+#Initialize
+import turtle
+t = turtle.Turtle()
+t.speed('fastest')
+import random
+
+#Functions
+
+#collecting the info from the user to create the ticket
+def ticket_generator():
+    print("""Welcome to the Musuem of Science and Industry's Ticket Generator!
+    """)
+    name = input("Please enter your name: ")
+    age = int(input("How old are you? "))
+    day = input("What day of the week are you going? ")
+    coupon = input("Do you have a coupon? (y/n) ")
+    while coupon == 'y':#if they have a coupon, this will happen
+        while True:
+            if age <= 3:
+                price = 0
+            elif age >= 4 and age <=17 and (day.lower() == "monday" or day.lower() == "tuesday" or day.lower() == "wednesday" or day.lower() == "thursday" or day.lower() == "friday"):
+                price = 50
+            elif age >=4 and age <=17 and (day.lower() == "saturday" or day.lower() == "sunday"):
+              price = 100
+            elif age >=18:
+                price = 100
+            code = input("Code: ")
+            if code.upper() == "FREEFRIDAY" and age>=4 and age<=17 and day.lower() == "friday":
+                price = 0
+                break#if the coupon works, then the function will break and the ticket will be made 
+            elif code.upper() == "FREEFRIDAY" and age >=18:
+                print("You are ineligible for this discount.")
+                again = input("Try again? (y/n): ")
+                if again == 'n':
+                    break
+            elif code.upper() == "FREEFRIDAY" and not day.lower() == "friday":
+              print("You are ineligible for this discount.")
+              again = input("Try again? (y/n): ")
+              if again == 'n':
+                  break
+            elif code.upper() == "SUNDAY10" and age>=4 and age<=17 and day.lower() == "sunday":
+                price = 90
+                break
+            elif code.upper() == "SUNDAY10" and not(day.lower() == "sunday"):
+                print("Only eligible to use on Sundays.")
+                again = input("Try again? (y/n): ")
+                if again == 'n':
+                    break#if the coupon doesnt work they leave the loop
+            elif code.upper() == "SUNDAY10" and day.lower() == "sunday" and age >= 18 or age <=3:
+                print("You are ineligible for this discount.")
+                again = input("Try again? (y/n): ")
+                if again == 'n':
+                    break
+            elif not(code.upper() == "FREEFRIDAY" or code.upper() == "SUNDAY10"):
+                print("That is an invalid code.")
+                again = input("Try again? (y/n): ")
+                if again == 'n':
+                    break
+        print("Ticket cost: ")#whether the coupon works or not, this will display at the end, breaking the loop, and then allowing the ticket to be drawn
+        print("$" + str(price) + ".00")
+        break
+    while coupon == 'n':#if they dont have a ticket, simply redefining constraints then prints cost
+        if age <= 3:
+            price = 0
+        elif age >= 4 and age <=17 and (day.lower() == "monday" or day.lower() == "tuesday" or day.lower() == "wednesday" or day.lower() == "thursday" or day.lower() == "friday"):
+            price = 50
+        elif age >=4 and age <=17 and day.lower() == "saturday" or day.lower() == "sunday":
+            price = 100
+        elif age >=18:
+            price = 100
+        print("Ticket cost: ")
+        print("$" + str(price) + ".00")
+        break
+
+    print("""
+The ticket will print below shortly.""")
+
+    #Ticket Functions
+    def quick_turn(distance):
+        t.penup()
+        t.left(90)
+        t.forward(distance)
+        t.right(90)
+        t.pendown()
+    def quick_right_turn(distance):#both r helpful for going vertically to make text at dif spots
+        t.penup()
+        t.right(90)
+        t.forward(distance)
+        t.left(90)
+        t.pendown()
+
+    def base_rectangle():#base for the ticket
+        t.begin_fill()
+        t.color("light blue")
+        for i in range(2):
+            t.forward(500)
+            t.left(90)
+            t.forward(100)
+            t.left(90)
+            t.circle(-25,180)
+            t.left(90)
+            t.forward(100)
+            t.left(90)
+        t.end_fill()
+
+    def tall_rectangle():
+        t.begin_fill()
+        for i in range(2):
+            t.forward(37.5)
+            t.right(90)
+            t.forward(200)
+            t.right(90)
+        t.end_fill()
+
+    def dotted_rectangle():
+        t.forward(290)
+        t.left(90)
+        t.forward(66.5)
+        t.left(90)
+        for i in range(29):
+            t.penup()
+            t.forward(5)
+            t.pendown()
+            t.forward(5)
+        t.left(90)
+        t.forward(66.5)
+        t.left(90)
+
+    def wide_rectangle():
+        for i in range(2):
+            t.forward(290)
+            t.left(90)
+            t.forward(66.5)
+            t.left(90)
+
+    def open_rectangle():
+        t.penup()
+        t.forward(290)
+        t.left(90)
+        t.pendown()
+        t.forward(66.5)
+        t.left(90)
+        t.forward(290)
+        t.left(90)
+        t.forward(66.5)
+        t.left(90)
+        
+    def two_wide():
+        t.left(90)
+        t.forward(70)
+        t.right(90)
+        open_rectangle()
+        t.penup()
+        t.left(90)
+        t.forward(66.5)
+        t.right(90)
+        t.pendown()
+        t.begin_fill()
+        wide_rectangle()
+        t.end_fill()
+    def draw_stars():
+        t.color("white")
+        for i in range(50):
+            t.penup()
+            t.goto((random.randint(-229,-194)),(random.randint(15,215)))
+            t.pendown()
+            t.begin_fill()
+            t.circle(1)
+            t.end_fill()
+    def draw_right_stars():
+        t.color("white")
+        for i in range(50):
+            t.penup()
+            t.goto((random.randint(150,185)),(random.randint(15,215)))
+            t.pendown()
+            t.begin_fill()
+            t.circle(1)
+            t.end_fill()
+        
+    def draw_ticket(name, price, dayofweek, y_location):#full ticket function that uses all of the above
+        t.penup()
+        t.goto(-275, y_location)
+        t.pendown()
+        base_rectangle()
+        t.penup()
+        t.goto(0, y_location +15) #so that it starts at the right place
+        t.color("dark blue") # beginning the inside lines
+        t.left(180)
+        t.forward(192.5)
+        t.pendown() #spacing it right
+        tall_rectangle()
+        t.right(180)
+        t.penup()
+        t.forward(25)
+        t.pendown()
+        dotted_rectangle() #makes only one rectangle with a dotted top
+        two_wide()
+        t.penup()#spacing, again
+        t.forward(315)
+        quick_turn(66.5)
+        tall_rectangle() #last side panel
+        t.right(90)
+        t.forward(35)
+        t.right(90)
+        t.penup()
+        t.forward(170)
+        t.pendown()
+        t.color("white")
+        t.write("Museum of", font=("Trebuchet MS", 20), align="center")
+        quick_turn(30)
+        t.write("Science and Industry", font=("Trebuchet MS", 20), align ="center")
+        quick_turn(75)
+        t.write("TICKET", font = ("Trebuchet MS", 50), align="center")
+        quick_turn(30)
+        t.write("Admit One", font = ("Courier New", 20), align="left")
+        quick_turn(30)
+        t.write((name.capitalize()), font = ("Courier New", 20), align = "left")
+        t.penup()
+        t.forward(130)
+        t.pendown()
+        t.write(("$" + str(price)), font = ("Courier New", 20), align = "left")
+        quick_right_turn(30)
+        t.write((day.capitalize()), font = ("Courier New", 20), align = "left")
+        draw_stars()
+        draw_right_stars()
+
+    draw_ticket(name, price,day,0)
+
+#MAIN
+ticket_generator()
