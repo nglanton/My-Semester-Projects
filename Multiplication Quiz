@@ -48,7 +48,7 @@ Ready, set...""")
         print("You got " + str(score) + " of 5 questions correct!")
         print("You completed the quiz in " + str(elapsed_time) + " seconds.")
         if score >4 and elapsed_time <7:
-            print("is u magic???")
+            print("Are you using magic??")
             #reserved for only the best of the best scores! 
         elif score >= 4 and elapsed_time <12:
             print("Good job!")
