@@ -1,5 +1,5 @@
 # My-Semester-Projects
-Currently updated w/ projects from Aug 2024- Jan 2025. 
+Currently updated w/ projects from Aug 2024- Apr 2025. 
 
 ### Project 1: Pokemon Game (11/21/2024)
 **Summary**: This program allows users to play an adventure game with the Pokemon Gengar. They can evolve, train, and rest the Pokemon to prepare for a final boss battle. 
