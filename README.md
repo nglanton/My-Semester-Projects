@@ -36,7 +36,7 @@ Currently updated w/ projects from Aug 2024- Jan 2025.
 - At the end of the game, output is determined by their score/ time (ie, what type of "congratulations" the user gets)
 - Multiplication questions are randomized.
 
-  ### Project 6: CREATE TASK: a password guessing game, hangman-style
+  ### Project 6: CREATE TASK: a password guessing game, hangman-style (3/17-4/30/2025)
 **Summary**: This program is meant to educate users on how easy it is to guess weak passwords. It does so by allowing the user to guess a password w/ a length of 4, numbers or letters. They have 5 guesses. 
 **Key Features**: 
 - Passwords are sorted via the strength of the password, stored within another list (compares the two and makes a selection for a filtered list)
@@ -44,7 +44,7 @@ Currently updated w/ projects from Aug 2024- Jan 2025.
 - A user has five guesses no matter how many prior guesses they get correct.
 - Output changes depending on the user's success (or lack thereof). If they failed, then they see how long it usually takes for someone to guess that password
 
-  ### Project 7: List Scavenger Hunt
+  ### Project 7: List Scavenger Hunt (3/13/2025)
 **Summary**: Varying levels of difficulty dealing w/ list sorting & finding items within it. Basically practice problems.
 **Key Features**: 
 - Calculates average of a list
